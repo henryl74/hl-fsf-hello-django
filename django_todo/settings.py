@@ -1,3 +1,7 @@
+import os
+if os.path.exists("env.py"):
+    import env
+
 """
 Django settings for django_todo project.
 
@@ -20,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%37qaw(c9b-42)8$xkyaai)#@=ros#3bzpq55r@n2#lti2$z@%'
+SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
